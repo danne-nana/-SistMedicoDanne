@@ -1,0 +1,43 @@
+/* ==========================================
+   ESTILOS GENERALES Y APARIENCIA AZUL/MORADO
+   ========================================== */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f3f4f6;
+}
+
+.max-w-lg {
+    max-width: 500px;
+}
+
+.max-w-md {
+    max-width: 400px;
+}
+
+/* Login Hero Gradient */
+.login-body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.login-hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    position: relative;
+}
+
+/* Animación Hover para las tarjetas horizontales */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Badges de especialidades */
+.badge-especialidad {
+    background-color: #8b5cf6;
+    color: #ffffff;
+    font-weight: 500;
+}

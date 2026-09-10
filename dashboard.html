@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Médicos - Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-light">
+
+    <div class="d-flex" id="wrapper">
+        <!-- Menú Lateral -->
+        <div class="p-3 text-white" id="sidebar" style="width: 260px; min-height: 100vh; background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);">
+            <div class="d-flex align-items-center justify-content-center py-3 mb-3 border-bottom border-secondary">
+                <i class="fa-solid fa-stethoscope fa-2x text-info me-2"></i>
+                <h4 class="fw-bold mb-0">MedSystem</h4>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action text-white active" style="background: #6366f1; border:none; border-radius:10px;"><i class="fa-solid fa-chart-line me-2"></i>Inicio</a>
+                <a href="registro.html" class="list-group-item list-group-item-action text-white bg-transparent border-0"><i class="fa-solid fa-hospital-user me-2"></i>Pacientes y Citas</a>
+                <a href="reportes.html" class="list-group-item list-group-item-action text-white bg-transparent border-0"><i class="fa-solid fa-calendar-check me-2"></i>Horarios y Reportes</a>
+                <a href="index.html" class="list-group-item list-group-item-action text-white bg-danger mt-4 rounded-3"><i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión</a>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="flex-grow-1 p-4">
+            <header class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom">
+                <h2 class="fw-bold text-dark mb-0">Panel Principal</h2>
+                <span class="badge fs-6 px-3 py-2 rounded-pill shadow-sm" style="background-color: #e0e7ff; color: #3730a3;">
+                    <i class="fa-solid fa-circle-user me-1"></i> Bienvenido, Dr. Admin
+                </span>
+            </header>
+
+            <!-- Disposición Horizontal Alargada (2 por fila) -->
+            <div class="row g-4 mb-4">
+                
+                <!-- Tarjeta 1: Pacientes (Azul) -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 text-white p-4" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); min-height: 120px;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-4 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.2);">
+                                    <i class="fa-solid fa-user fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-uppercase small fw-bold opacity-75 mb-1">Total Pacientes</h6>
+                                    <h2 class="fw-bold mb-0 display-5" id="totalPacientes">0</h2>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-users fa-3x opacity-25"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Médicos (Morado Lila) -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 text-white p-4" style="background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%); min-height: 120px;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-4 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.2);">
+                                    <i class="fa-solid fa-user-tie fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-uppercase small fw-bold opacity-75 mb-1">Médicos Registrados</h6>
+                                    <h2 class="fw-bold mb-0 display-5" id="totalMedicos">2</h2>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-user-doctor fa-3x opacity-25"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Especialidades (Indigo / Azul Violeta) -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 text-white p-4" style="background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); min-height: 120px;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-4 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.2);">
+                                    <i class="fa-solid fa-briefcase-medical fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-uppercase small fw-bold opacity-75 mb-1">Especialidades</h6>
+                                    <h2 class="fw-bold mb-0 display-5" id="totalEspecialidades">2</h2>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-heart-pulse fa-3x opacity-25"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: Citas Programadas (Morado Oscuro) -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 text-white p-4" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); min-height: 120px;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-4 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.2);">
+                                    <i class="fa-solid fa-calendar-check fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-uppercase small fw-bold opacity-75 mb-1">Citas Agendadas</h6>
+                                    <h2 class="fw-bold mb-0 display-5" id="totalCitas">0</h2>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-calendar-days fa-3x opacity-25"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tabla de Resumen -->
+            <div class="card shadow-sm p-4 border-0 rounded-4 bg-white">
+                <h5 class="fw-bold mb-3 text-dark"><i class="fa-solid fa-clock-rotate-left me-2 text-primary"></i>Últimas Citas Programadas</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Médico</th>
+                                <th>Especialidad</th>
+                                <th>Fecha y Hora</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaResumen">
+                            <!-- Los registros dinámicos del localStorage o PHP se insertan aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

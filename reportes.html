@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Médicos - Horarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-light">
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar General -->
+        <div class="p-3 text-white" style="width: 260px; min-height: 100vh; background: #1e1b4b;">
+            <div class="d-flex align-items-center justify-content-center py-3 mb-3 border-bottom border-secondary">
+                <i class="fa-solid fa-stethoscope fa-2x text-info me-2"></i>
+                <h4 class="fw-bold mb-0">MedSystem</h4>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action text-white bg-transparent border-0"><i class="fa-solid fa-chart-line me-2"></i>Inicio</a>
+                <a href="registro.html" class="list-group-item list-group-item-action text-white bg-transparent border-0"><i class="fa-solid fa-hospital-user me-2"></i>Pacientes y Citas</a>
+                <a href="reportes.html" class="list-group-item list-group-item-action text-white active" style="background: #6366f1; border:none; border-radius:10px;"><i class="fa-solid fa-calendar-check me-2"></i>Horarios y Reportes</a>
+                <a href="index.html" class="list-group-item list-group-item-action text-white bg-danger mt-5 rounded-3"><i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión</a>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="flex-grow-1 p-4">
+            <h2 class="fw-bold text-dark mb-4"><i class="fa-solid fa-user-clock text-info me-2"></i>Horarios Médicos Disponibles</h2>
+
+            <!-- Contenedor donde script.js inyecta las tarjetas sincronizadas -->
+            <div class="row" id="contenedorHorarios"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

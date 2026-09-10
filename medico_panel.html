@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedSystem - Panel de Médico</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-light">
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar para vista del Médico -->
+        <div class="p-3 text-white" style="width: 260px; min-height: 100vh; background: #1e1b4b;">
+            <div class="d-flex align-items-center justify-content-center py-3 mb-3 border-bottom border-secondary">
+                <i class="fa-solid fa-stethoscope fa-2x text-info me-2"></i>
+                <h4 class="fw-bold mb-0">MedSystem</h4>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="medico_panel.html" class="list-group-item list-group-item-action text-white active" style="background: #6366f1; border:none; border-radius:10px;">
+                    <i class="fa-solid fa-calendar-days me-2"></i>Mis Horarios
+                </a>
+                <a href="index.html" class="list-group-item list-group-item-action text-white bg-danger mt-5 rounded-3">
+                    <i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión
+                </a>
+            </div>
+        </div>
+
+        <!-- Contenido principal del Médico -->
+        <div class="flex-grow-1 p-4">
+            <header class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom">
+                <h2 class="fw-bold text-dark mb-0">Gestión de Horarios Semanales</h2>
+                <span class="badge fs-6 px-3 py-2 rounded-pill bg-primary">
+                    <i class="fa-solid fa-user-doctor me-1"></i> Dra. María Pérez
+                </span>
+            </header>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <h5 class="fw-bold text-dark mb-3">
+                            <i class="fa-solid fa-clock me-2 text-primary"></i>Registrar Disponibilidad
+                        </h5>
+                        
+                        <div id="msjExito" class="alert alert-success d-none mb-3" role="alert">
+                            ¡Horario actualizado correctamente y publicado en el sistema!
+                        </div>
+
+                        <form id="formHorarioMedico">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold text-dark">Días de Atención</label>
+                                <select id="diasTrabajo" class="form-select" required>
+                                    <option value="Lunes a Viernes">Lunes a Viernes</option>
+                                    <option value="Lunes a Jueves">Lunes a Jueves</option>
+                                    <option value="Fines de Semana">Fines de Semana (Sáb - Dom)</option>
+                                    <option value="Lunes, Miércoles y Viernes">Lunes, Miércoles y Viernes</option>
+                                </select>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark">Hora de Inicio</label>
+                                    <input type="text" id="horaInicio" class="form-control" placeholder="Ej. 08:00 AM" value="08:00 AM" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark">Hora de Salida</label>
+                                    <input type="text" id="horaFin" class="form-control" placeholder="Ej. 04:00 PM" value="04:00 PM" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold text-dark">Estado Disponibilidad</label>
+                                <select id="estadoMedico" class="form-select" required>
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="Ocupado">Ocupado</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3">
+                                <i class="fa-solid fa-floppy-disk me-2"></i>Guardar y Publicar Horario
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
